@@ -57,8 +57,9 @@ function buildMetadata(sample) {
 function buildCharts(sample) {
   // 2. Use d3.json to load and retrieve the samples.json file 
   d3.json("samples.json").then((data) => {
+    console.log(data)
     // 3. Create a variable that holds the samples array. 
-
+    var samplesArray = 
     // 4. Create a variable that filters the samples for the object with the desired sample number.
 
     //  5. Create a variable that holds the first sample in the array.
@@ -79,9 +80,12 @@ function buildCharts(sample) {
     ];
     // 9. Create the layout for the bar chart. 
     var barLayout = {
+      x:
+      y:
+      type: "bar"
      
     };
     // 10. Use Plotly to plot the data with the layout. 
-    
+    Plotly.newPlot("bar", barData, barLayout)
   });
 }
