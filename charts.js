@@ -69,23 +69,22 @@ function buildCharts(sample) {
 
 
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
-    topTenIds = firstSamples.otu_ids.sort((a,b) => (a.otu_ids-b.otu_ids)).reverse().slice(0,10);
-    otu_ids = topTenIds.map()
-    console.log(topTenIds);
-    // otu_labels = samplesArray.filter(sampleObj =>sampleObj.otu_labels === sample);
-    // console.log(otu_labels);
-    // sample_values = samplesArray.filter(sampleObj =>sampleObj.sample_values === sample);
-    // console.log(sample_values);
+    otu_ids = firstSamples.otu_ids;
+    console.log(otu_ids)
+    otu_labels = firstSamples.otu_labels;
+    console.log(otu_labels);
+    sample_values = firstSamples.sample_values;
+    console.log(sample_values);
 
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
     //  so the otu_ids with the most bacteria are last. 
 
-    
-    
-    // console.log(sortedIds)
-    // var yticks = sortedIds.splice(0,10);
+    var yticks =firstSamples.otu_ids.sort((a,b) => (a.otu_ids-b.otu_ids)).reverse().slice(0,10);
+    yticks.map(bSamples => bSamples.otu_ids === otu_ids).text(`OTU ` + {otu_ids});
+    console.log(yticks);
+
     // 8. Create the trace for the bar chart. 
     var barData = [{
       x: sample_values,
