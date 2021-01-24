@@ -96,11 +96,14 @@ function buildCharts(sample) {
 
     // 9. Create the layout for the bar chart. 
     var barLayout = {
-      title: "Top 10 Bacteria Cultures Found"
+      title: "Top 10 Bacteria Cultures Found",
+      plot_bgcolor: "#E5E6ED",
+      paper_bgcolor: "#E5E6ED"
     
     };
+    var config = {responsive: true}
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot("bar", barData, barLayout)
+    Plotly.newPlot("bar", barData, barLayout, config)
 
 
     //DELIVERABLE 2
@@ -122,12 +125,14 @@ function buildCharts(sample) {
 
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
-      title: "Bacteria Culture Per Sample",
+      title: "Bacteria Culture per Sample",
       xaxis: {title: "OTU ID"},
       margin: {l: 80},
       height: 500,
       width: 1000,
-      hovermode: otu_labels
+      hovermode: otu_labels,
+      plot_bgcolor: "#E5E6ED",
+      paper_bgcolor: "#E5E6ED"
     };
     
     var config = {responsive: true}
@@ -183,7 +188,8 @@ function buildCharts(sample) {
         font: {size: 20}},
       width: 400, 
       height: 500, 
-      margin: { t: 0, b: 0 } 
+      margin: { t: 0, b: 0 },
+      paper_bgcolor: "#E5E6ED"
      
     };
     var config = {responsive: true}
